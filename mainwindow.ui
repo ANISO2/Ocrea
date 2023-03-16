@@ -1,0 +1,684 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>813</width>
+    <height>514</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(255, 255, 255);</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLineEdit" name="lenomevenement">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>70</y>
+      <width>113</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+background-color: rgb(184, 247, 213);
+
+</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>70</y>
+      <width>51</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600; color:#000000;&quot;&gt;Nom&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_11">
+    <property name="geometry">
+     <rect>
+      <x>660</x>
+      <y>430</y>
+      <width>93</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	background-color: rgb(53, 191, 129);
+
+	border-style: solid;
+	border-width: 2px;
+	border-color: #9999aa;
+	border-radius: 14px;
+	color: black;
+	/*background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(0, 0, 255, 255), stop:1 rgba(255, 255, 255, 255));*/
+}
+
+
+QPushButton:pressed {
+	background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(0, 255, 255, 255), stop:1 rgba(255, 255, 255, 255));
+		color: #fffffe;
+}
+
+
+QPushButton:hover:!pressed {
+	background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(255, 0, 255, 255), stop:1 rgba(255, 255, 255, 255));
+		color: #0c2f70;
+}
+
+QPushButton:disabled {
+		background-color: #aaaaaa;
+		color: #ffffff;
+}</string>
+    </property>
+    <property name="text">
+     <string>Confirmer</string>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>../../Downloads/confirm-16 (1).png</normaloff>../../Downloads/confirm-16 (1).png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>20</width>
+      <height>20</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_7">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>367</y>
+      <width>91</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	background-color: rgb(88, 255, 158);
+	border-style: solid;
+	border-width: 2px;
+	border-color: #9999aa;
+	border-radius: 14px;
+	color: black;
+	/*background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(0, 0, 255, 255), stop:1 rgba(255, 255, 255, 255));*/
+}
+
+
+QPushButton:pressed {
+	background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(0, 255, 255, 255), stop:1 rgba(255, 255, 255, 255));
+		color: #fffffe;
+}
+
+
+QPushButton:hover:!pressed {
+	background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(255, 0, 255, 255), stop:1 rgba(255, 255, 255, 255));
+		color: #0c2f70;
+}
+
+QPushButton:disabled {
+		background-color: #aaaaaa;
+		color: #ffffff;
+}</string>
+    </property>
+    <property name="text">
+     <string>video</string>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>../../Downloads/OIP (1).jpg</normaloff>../../Downloads/OIP (1).jpg</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>23</width>
+      <height>23</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_4">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>287</y>
+      <width>91</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	background-color: rgb(88, 255, 158);
+	border-style: solid;
+	border-width: 2px;
+	border-color: #9999aa;
+	border-radius: 14px;
+	color: black;
+	/*background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(0, 0, 255, 255), stop:1 rgba(255, 255, 255, 255));*/
+}
+
+
+QPushButton:pressed {
+	background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(0, 255, 255, 255), stop:1 rgba(255, 255, 255, 255));
+		color: #fffffe;
+}
+
+
+QPushButton:hover:!pressed {
+	background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(255, 0, 255, 255), stop:1 rgba(255, 255, 255, 255));
+		color: #0c2f70;
+}
+
+QPushButton:disabled {
+		background-color: #aaaaaa;
+		color: #ffffff;
+}</string>
+    </property>
+    <property name="text">
+     <string>Statistique</string>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>../../Downloads/1170718.png</normaloff>../../Downloads/1170718.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>20</width>
+      <height>20</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_event">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>60</y>
+      <width>101</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	background-color: rgb(88, 255, 158);
+	border-style: solid;
+	border-width: 2px;
+	border-color: #9999aa;
+	border-radius: 14px;
+	color: black;
+	/*background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(0, 0, 255, 255), stop:1 rgba(255, 255, 255, 255));*/
+}
+
+
+QPushButton:pressed {
+	background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(0, 255, 255, 255), stop:1 rgba(255, 255, 255, 255));
+		color: #fffffe;
+}
+
+
+QPushButton:hover:!pressed {
+	background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(255, 0, 255, 255), stop:1 rgba(255, 255, 255, 255));
+		color: #0c2f70;
+}
+
+QPushButton:disabled {
+		background-color: #aaaaaa;
+		color: #ffffff;
+}</string>
+    </property>
+    <property name="text">
+     <string>Ajouter</string>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>../../Downloads/png-clipart-computer-icons-add-button-logo-number.png</normaloff>../../Downloads/png-clipart-computer-icons-add-button-logo-number.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>20</width>
+      <height>20</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="leduree">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>130</y>
+      <width>113</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(184, 247, 213);
+</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_6">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>327</y>
+      <width>91</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	background-color: rgb(88, 255, 158);
+	border-style: solid;
+	border-width: 2px;
+	border-color: #9999aa;
+	border-radius: 14px;
+	color: black;
+	/*background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(0, 0, 255, 255), stop:1 rgba(255, 255, 255, 255));*/
+}
+
+
+QPushButton:pressed {
+	background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(0, 255, 255, 255), stop:1 rgba(255, 255, 255, 255));
+		color: #fffffe;
+}
+
+
+QPushButton:hover:!pressed {
+	background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(255, 0, 255, 255), stop:1 rgba(255, 255, 255, 255));
+		color: #0c2f70;
+}
+
+QPushButton:disabled {
+		background-color: #aaaaaa;
+		color: #ffffff;
+}
+</string>
+    </property>
+    <property name="text">
+     <string>map</string>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>../../Downloads/OIP.jpg</normaloff>../../Downloads/OIP.jpg</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>20</width>
+      <height>20</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>120</y>
+      <width>91</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600; color:#000000;&quot;&gt;durée&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QTableView" name="tableView_2">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>180</y>
+      <width>501</width>
+      <height>231</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(183, 232, 201);
+background-color: rgb(184, 247, 213);
+</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>90</y>
+      <width>111</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600; color:#000000;&quot;&gt;date&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_update">
+    <property name="geometry">
+     <rect>
+      <x>480</x>
+      <y>60</y>
+      <width>101</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	background-color: rgb(88, 255, 158);
+	border-style: solid;
+	border-width: 2px;
+	border-color: #9999aa;
+	border-radius: 14px;
+	color: black;
+	/*background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(0, 0, 255, 255), stop:1 rgba(255, 255, 255, 255));*/
+}
+
+
+QPushButton:pressed {
+	background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(0, 255, 255, 255), stop:1 rgba(255, 255, 255, 255));
+		color: #fffffe;
+}
+
+
+QPushButton:hover:!pressed {
+	background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(255, 0, 255, 255), stop:1 rgba(255, 255, 255, 255));
+		color: #0c2f70;
+}
+
+QPushButton:disabled {
+		background-color: #aaaaaa;
+		color: #ffffff;
+}</string>
+    </property>
+    <property name="text">
+     <string>Modifier</string>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>../../Downloads/45706.png</normaloff>../../Downloads/45706.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>20</width>
+      <height>20</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>40</y>
+      <width>41</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a name=&quot;docs-internal-guid-b627337d-7fff-a2e1-b3fd-494d1fa366f1&quot;/&gt;&lt;span style=&quot; font-family:'Times New Roman'; font-size:10pt; font-weight:600; color:#000000; background-color:transparent;&quot;&gt;i&lt;/span&gt;&lt;span style=&quot; font-family:'Times New Roman'; font-size:10pt; font-weight:600; color:#000000; background-color:transparent;&quot;&gt;d&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_9">
+    <property name="geometry">
+     <rect>
+      <x>610</x>
+      <y>150</y>
+      <width>151</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(183, 232, 201);
+</string>
+    </property>
+    <property name="placeholderText">
+     <string>rechercher</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_supprimer">
+    <property name="geometry">
+     <rect>
+      <x>630</x>
+      <y>60</y>
+      <width>111</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	background-color: rgb(88, 255, 158);
+	border-style: solid;
+	border-width: 2px;
+	border-color: #9999aa;
+	border-radius: 14px;
+	color: black;
+	/*background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(0, 0, 255, 255), stop:1 rgba(255, 255, 255, 255));*/
+}
+
+
+QPushButton:pressed {
+	background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(0, 255, 255, 255), stop:1 rgba(255, 255, 255, 255));
+		color: #fffffe;
+}
+
+
+QPushButton:hover:!pressed {
+	background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(255, 0, 255, 255), stop:1 rgba(255, 255, 255, 255));
+		color: #0c2f70;
+}
+
+QPushButton:disabled {
+		background-color: #aaaaaa;
+		color: #ffffff;
+}</string>
+    </property>
+    <property name="text">
+     <string>Supprimer</string>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>../../Downloads/121113.png</normaloff>../../Downloads/121113.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>20</width>
+      <height>20</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_3">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>247</y>
+      <width>91</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	background-color: rgb(88, 255, 158);
+	border-style: solid;
+	border-width: 2px;
+	border-color: #9999aa;
+	border-radius: 14px;
+	color: black;
+	/*background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(0, 0, 255, 255), stop:1 rgba(255, 255, 255, 255));*/
+}
+
+
+QPushButton:pressed {
+	background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(0, 255, 255, 255), stop:1 rgba(255, 255, 255, 255));
+		color: #fffffe;
+}
+
+
+QPushButton:hover:!pressed {
+	background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(255, 0, 255, 255), stop:1 rgba(255, 255, 255, 255));
+		color: #0c2f70;
+}
+
+QPushButton:disabled {
+		background-color: #aaaaaa;
+		color: #ffffff;
+}</string>
+    </property>
+    <property name="text">
+     <string>Pdf</string>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>../../Downloads/PDF_file_icon.svg.png</normaloff>../../Downloads/PDF_file_icon.svg.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>20</width>
+      <height>20</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="leidevenement">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>40</y>
+      <width>113</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+background-color: rgb(184, 247, 213);
+
+
+</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_12">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>220</y>
+      <width>91</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	background-color: rgb(88, 255, 158);
+	border-style: solid;
+	border-width: 2px;
+	border-color: #9999aa;
+	border-radius: 14px;
+	color: black;
+	/*background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(0, 0, 255, 255), stop:1 rgba(255, 255, 255, 255));*/
+}
+
+
+QPushButton:pressed {
+	background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(0, 255, 255, 255), stop:1 rgba(255, 255, 255, 255));
+		color: #fffffe;
+}
+
+
+QPushButton:hover:!pressed {
+	background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(255, 0, 255, 255), stop:1 rgba(255, 255, 255, 255));
+		color: #0c2f70;
+}
+
+QPushButton:disabled {
+		background-color: #aaaaaa;
+		color: #ffffff;
+}</string>
+    </property>
+    <property name="text">
+     <string>Tri</string>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>../../Downloads/271743198_464449928646161_2550356874147298555_n.png</normaloff>../../Downloads/271743198_464449928646161_2550356874147298555_n.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>25</width>
+      <height>25</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="leurlvideo">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>160</y>
+      <width>113</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(184, 247, 213);
+</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>150</y>
+      <width>91</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600; color:#000000;&quot;&gt;URL&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QDateEdit" name="dateTimeEdit_event">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>100</y>
+      <width>110</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(184, 247, 213);</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="leidevenement_supp">
+    <property name="geometry">
+     <rect>
+      <x>630</x>
+      <y>20</y>
+      <width>113</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+background-color: rgb(184, 247, 213);
+
+
+</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>813</width>
+     <height>26</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
