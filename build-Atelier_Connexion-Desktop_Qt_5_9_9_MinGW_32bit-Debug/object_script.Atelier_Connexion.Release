@@ -1,0 +1,13 @@
+INPUT(
+./release\batteries.o
+./release\calendrier.o
+./release\main.o
+./release\mainwindow.o
+./release\connection.o
+./release\smtp.o
+./release\statistiques.o
+./release\moc_calendrier.o
+./release\moc_mainwindow.o
+./release\moc_smtp.o
+./release\moc_statistiques.o
+);

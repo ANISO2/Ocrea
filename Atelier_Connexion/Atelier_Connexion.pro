@@ -3,10 +3,12 @@
 # Project created by QtCreator 2018-10-26T21:45:23
 #
 #-------------------------------------------------
-
-QT       += core gui sql
+QT       += core gui sql charts
 QT       += sql
 CONFIG   += console
+QT += printsupport
+QT += network
+QT += multimedia
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -28,19 +30,28 @@ CONFIG += c++11
 
 SOURCES += \
     batteries.cpp \
+    calendrier.cpp \
         main.cpp \
         mainwindow.cpp \
-    connection.cpp
+    connection.cpp \
+    smtp.cpp \
+    statistiques.cpp
 
 HEADERS += \
-    batteries.h \
-        mainwindow.h \
-    connection.h
+batteries.h \
+    calendrier.h \
+ mainwindow.h \
+    connection.h \
+    smtp.h \
+ statistiques.h
 
 FORMS += \
+        calendrier.ui \
         mainwindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+win32:RC_ICONS += images/logo.ico

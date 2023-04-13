@@ -234,9 +234,13 @@ Makefile: ../Atelier_Connexion/Atelier_Connexion.pro ../../qt/5.9.9/mingw53_32/m
 		../../qt/5.9.9/mingw53_32/mkspecs/features/yacc.prf \
 		../../qt/5.9.9/mingw53_32/mkspecs/features/lex.prf \
 		../Atelier_Connexion/Atelier_Connexion.pro \
+		../../qt/5.9.9/mingw53_32/lib/Qt5Charts.prl \
+		../../qt/5.9.9/mingw53_32/lib/Qt5PrintSupport.prl \
 		../../qt/5.9.9/mingw53_32/lib/Qt5Widgets.prl \
+		../../qt/5.9.9/mingw53_32/lib/Qt5Multimedia.prl \
 		../../qt/5.9.9/mingw53_32/lib/Qt5Gui.prl \
 		../../qt/5.9.9/mingw53_32/lib/Qt5Sql.prl \
+		../../qt/5.9.9/mingw53_32/lib/Qt5Network.prl \
 		../../qt/5.9.9/mingw53_32/lib/Qt5Core.prl
 	$(QMAKE) -o Makefile ..\Atelier_Connexion\Atelier_Connexion.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
 ../../qt/5.9.9/mingw53_32/mkspecs/features/spec_pre.prf:
@@ -412,9 +416,13 @@ Makefile: ../Atelier_Connexion/Atelier_Connexion.pro ../../qt/5.9.9/mingw53_32/m
 ../../qt/5.9.9/mingw53_32/mkspecs/features/yacc.prf:
 ../../qt/5.9.9/mingw53_32/mkspecs/features/lex.prf:
 ../Atelier_Connexion/Atelier_Connexion.pro:
+../../qt/5.9.9/mingw53_32/lib/Qt5Charts.prl:
+../../qt/5.9.9/mingw53_32/lib/Qt5PrintSupport.prl:
 ../../qt/5.9.9/mingw53_32/lib/Qt5Widgets.prl:
+../../qt/5.9.9/mingw53_32/lib/Qt5Multimedia.prl:
 ../../qt/5.9.9/mingw53_32/lib/Qt5Gui.prl:
 ../../qt/5.9.9/mingw53_32/lib/Qt5Sql.prl:
+../../qt/5.9.9/mingw53_32/lib/Qt5Network.prl:
 ../../qt/5.9.9/mingw53_32/lib/Qt5Core.prl:
 qmake: FORCE
 	@$(QMAKE) -o Makefile ..\Atelier_Connexion\Atelier_Connexion.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"

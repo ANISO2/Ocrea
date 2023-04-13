@@ -23,9 +23,15 @@ public:
     //fonctionnalités de base relatives a l'entité batteries
     bool ajouterbatterie();
     QSqlQueryModel * afficher();
+    QSqlQueryModel * afficher_id();
     bool supprimer(QString);
     bool checkInput(const QString &IDBATTERIE);
     bool checkInput1(const QString &ETAT);
+    int statistique1();
+    int statistique2();
+    int statistique3();
+    QSqlQueryModel * getAllId();
+    int getNumIdsInDatabase();
 };
 
 #endif // BATTERIES_H

@@ -13,6 +13,7 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QComboBox>
 #include <QtWidgets/QDateTimeEdit>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
@@ -20,9 +21,10 @@
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QStackedWidget>
 #include <QtWidgets/QStatusBar>
-#include <QtWidgets/QTabWidget>
 #include <QtWidgets/QTableView>
+#include <QtWidgets/QTextEdit>
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QWidget>
 
@@ -32,56 +34,58 @@ class Ui_MainWindow
 {
 public:
     QWidget *centralWidget;
-    QTabWidget *tabWidget;
-    QWidget *tab_3;
-    QLineEdit *lineEdit_id;
-    QPushButton *pushButton_7;
-    QPushButton *pushButton_4;
-    QPushButton *pushButton_6;
-    QPushButton *pushButton_ajout;
+    QStackedWidget *stackedWidget;
+    QWidget *page;
     QPushButton *pushButton_supprimer;
+    QPushButton *stat;
+    QPushButton *pdf;
+    QPushButton *mail;
+    QPushButton *calendrier;
+    QLabel *label_7;
+    QPushButton *tri;
     QLabel *label_6;
-    QPushButton *pushButton_3;
-    QLineEdit *lineEdit_9;
+    QLabel *label;
+    QTableView *tableView;
+    QPushButton *pushButton_ajout;
+    QPushButton *pushButton_modify;
+    QLineEdit *lineEdit_recherche;
+    QPushButton *pushButton;
+    QComboBox *cb_pdf;
     QLabel *label_3;
     QLineEdit *lineEdit_etat;
-    QLabel *label;
-    QPushButton *pushButton_modify;
-    QPushButton *pushButton_12;
     QDateTimeEdit *lineEdit_date;
-    QTableView *tableView;
-    QWidget *tab_4;
-    QWidget *tab_5;
+    QLineEdit *lineEdit_id;
+    QLabel *label_pic;
+    QWidget *page_2;
+    QPushButton *pushButton_2;
+    QLineEdit *lineEdit;
+    QLineEdit *lineEdit_2;
+    QTextEdit *textEdit;
+    QPushButton *pushButton_3;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
+    QToolBar *toolBar;
+    QToolBar *toolBar_2;
+    QToolBar *toolBar_3;
 
     void setupUi(QMainWindow *MainWindow)
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(1115, 574);
+        MainWindow->resize(1235, 682);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
-        tabWidget = new QTabWidget(centralWidget);
-        tabWidget->setObjectName(QStringLiteral("tabWidget"));
-        tabWidget->setGeometry(QRect(20, 20, 1041, 481));
-        tabWidget->setStyleSheet(QStringLiteral(""));
-        tab_3 = new QWidget();
-        tab_3->setObjectName(QStringLiteral("tab_3"));
-        lineEdit_id = new QLineEdit(tab_3);
-        lineEdit_id->setObjectName(QStringLiteral("lineEdit_id"));
-        lineEdit_id->setGeometry(QRect(180, 20, 113, 22));
-        lineEdit_id->setStyleSheet(QLatin1String("\n"
-"background-color: rgb(184, 247, 213);\n"
-"\n"
-"\n"
-""));
-        pushButton_7 = new QPushButton(tab_3);
-        pushButton_7->setObjectName(QStringLiteral("pushButton_7"));
-        pushButton_7->setGeometry(QRect(60, 347, 91, 41));
-        pushButton_7->setStyleSheet(QLatin1String("QPushButton {\n"
-"	background-color: rgb(88, 255, 158);\n"
+        stackedWidget = new QStackedWidget(centralWidget);
+        stackedWidget->setObjectName(QStringLiteral("stackedWidget"));
+        stackedWidget->setGeometry(QRect(20, 10, 1091, 561));
+        page = new QWidget();
+        page->setObjectName(QStringLiteral("page"));
+        pushButton_supprimer = new QPushButton(page);
+        pushButton_supprimer->setObjectName(QStringLiteral("pushButton_supprimer"));
+        pushButton_supprimer->setGeometry(QRect(30, 390, 161, 31));
+        pushButton_supprimer->setStyleSheet(QLatin1String("QPushButton {\n"
+"		background-color: rgb(184, 247, 213);\n"
 "	border-style: solid;\n"
 "	border-width: 2px;\n"
 "	border-color: #9999aa;\n"
@@ -98,27 +102,29 @@ public:
 "\n"
 "\n"
 "QPushButton:hover:!pressed {\n"
-"	background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(255, 0, 255, 255), stop:1 rgba(255, 255, 255, 255));\n"
+"	background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(0, 255, 0, 255), stop:1 rgba(255, 255, 255, 255));\n"
 "		color: #0c2f70;\n"
 "}\n"
+"\n"
 "\n"
 "QPushButton:disabled {\n"
 "		background-color: #aaaaaa;\n"
 "		color: #ffffff;\n"
 "}"));
         QIcon icon;
-        icon.addFile(QStringLiteral("../../../Downloads/275722247_3127640084221767_4987571222713071970_n.png"), QSize(), QIcon::Normal, QIcon::Off);
-        pushButton_7->setIcon(icon);
-        pushButton_7->setIconSize(QSize(23, 23));
-        pushButton_4 = new QPushButton(tab_3);
-        pushButton_4->setObjectName(QStringLiteral("pushButton_4"));
-        pushButton_4->setGeometry(QRect(60, 267, 91, 41));
-        pushButton_4->setStyleSheet(QLatin1String("QPushButton {\n"
-"	background-color: rgb(88, 255, 158);\n"
+        icon.addFile(QStringLiteral("../../../Downloads/121113.png"), QSize(), QIcon::Normal, QIcon::Off);
+        pushButton_supprimer->setIcon(icon);
+        pushButton_supprimer->setIconSize(QSize(20, 20));
+        stat = new QPushButton(page);
+        stat->setObjectName(QStringLiteral("stat"));
+        stat->setGeometry(QRect(540, 130, 111, 41));
+        stat->setStyleSheet(QLatin1String("QPushButton {\n"
+"			background-color: rgb(184, 247, 213);\n"
 "	border-style: solid;\n"
 "	border-width: 2px;\n"
 "	border-color: #9999aa;\n"
 "	border-radius: 14px;\n"
+"\n"
 "	color: black;\n"
 "	/*background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(0, 0, 255, 255), stop:1 rgba(255, 255, 255, 255));*/\n"
 "}\n"
@@ -129,11 +135,11 @@ public:
 "		color: #fffffe;\n"
 "}\n"
 "\n"
-"\n"
 "QPushButton:hover:!pressed {\n"
-"	background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(255, 0, 255, 255), stop:1 rgba(255, 255, 255, 255));\n"
+"	background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(0, 255, 0, 255), stop:1 rgba(255, 255, 255, 255));\n"
 "		color: #0c2f70;\n"
 "}\n"
+"\n"
 "\n"
 "QPushButton:disabled {\n"
 "		background-color: #aaaaaa;\n"
@@ -141,17 +147,18 @@ public:
 "}"));
         QIcon icon1;
         icon1.addFile(QStringLiteral("../../../Downloads/1170718.png"), QSize(), QIcon::Normal, QIcon::Off);
-        pushButton_4->setIcon(icon1);
-        pushButton_4->setIconSize(QSize(20, 20));
-        pushButton_6 = new QPushButton(tab_3);
-        pushButton_6->setObjectName(QStringLiteral("pushButton_6"));
-        pushButton_6->setGeometry(QRect(180, 307, 91, 41));
-        pushButton_6->setStyleSheet(QLatin1String("QPushButton {\n"
-"	background-color: rgb(88, 255, 158);\n"
+        stat->setIcon(icon1);
+        stat->setIconSize(QSize(20, 20));
+        pdf = new QPushButton(page);
+        pdf->setObjectName(QStringLiteral("pdf"));
+        pdf->setGeometry(QRect(390, 130, 111, 41));
+        pdf->setStyleSheet(QLatin1String("QPushButton {\n"
+"			background-color: rgb(184, 247, 213);\n"
 "	border-style: solid;\n"
 "	border-width: 2px;\n"
 "	border-color: #9999aa;\n"
-"	border-radius: 14px;\n"
+"	border-radius: 18px;\n"
+"	\n"
 "	color: black;\n"
 "	/*background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(0, 0, 255, 255), stop:1 rgba(255, 255, 255, 255));*/\n"
 "}\n"
@@ -164,24 +171,25 @@ public:
 "\n"
 "\n"
 "QPushButton:hover:!pressed {\n"
-"	background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(255, 0, 255, 255), stop:1 rgba(255, 255, 255, 255));\n"
+"	background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(0, 255, 0, 255), stop:1 rgba(255, 255, 255, 255));\n"
 "		color: #0c2f70;\n"
 "}\n"
 "\n"
 "QPushButton:disabled {\n"
 "		background-color: #aaaaaa;\n"
 "		color: #ffffff;\n"
-"}\n"
-""));
+"}"));
         QIcon icon2;
-        icon2.addFile(QStringLiteral("../../../Downloads/32223.png"), QSize(), QIcon::Normal, QIcon::Off);
-        pushButton_6->setIcon(icon2);
-        pushButton_6->setIconSize(QSize(20, 20));
-        pushButton_ajout = new QPushButton(tab_3);
-        pushButton_ajout->setObjectName(QStringLiteral("pushButton_ajout"));
-        pushButton_ajout->setGeometry(QRect(480, 50, 131, 41));
-        pushButton_ajout->setStyleSheet(QLatin1String("QPushButton {\n"
-"	background-color: rgb(88, 255, 158);\n"
+        icon2.addFile(QStringLiteral("../../../Downloads/PDF_file_icon.svg.png"), QSize(), QIcon::Normal, QIcon::Off);
+        pdf->setIcon(icon2);
+        pdf->setIconSize(QSize(20, 20));
+        mail = new QPushButton(page);
+        mail->setObjectName(QStringLiteral("mail"));
+        mail->setGeometry(QRect(690, 130, 101, 41));
+        mail->setStyleSheet(QLatin1String("QPushButton {\n"
+"	\n"
+"	\n"
+"		background-color: rgb(184, 247, 213);\n"
 "	border-style: solid;\n"
 "	border-width: 2px;\n"
 "	border-color: #9999aa;\n"
@@ -198,27 +206,29 @@ public:
 "\n"
 "\n"
 "QPushButton:hover:!pressed {\n"
-"	background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(255, 0, 255, 255), stop:1 rgba(255, 255, 255, 255));\n"
+"	background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(0, 255, 0, 255), stop:1 rgba(255, 255, 255, 255));\n"
 "		color: #0c2f70;\n"
 "}\n"
+"\n"
 "\n"
 "QPushButton:disabled {\n"
 "		background-color: #aaaaaa;\n"
 "		color: #ffffff;\n"
 "}"));
         QIcon icon3;
-        icon3.addFile(QStringLiteral("../../../Downloads/64579.png"), QSize(), QIcon::Normal, QIcon::Off);
-        pushButton_ajout->setIcon(icon3);
-        pushButton_ajout->setIconSize(QSize(20, 20));
-        pushButton_supprimer = new QPushButton(tab_3);
-        pushButton_supprimer->setObjectName(QStringLiteral("pushButton_supprimer"));
-        pushButton_supprimer->setGeometry(QRect(830, 50, 131, 41));
-        pushButton_supprimer->setStyleSheet(QLatin1String("QPushButton {\n"
-"	background-color: rgb(88, 255, 158);\n"
+        icon3.addFile(QStringLiteral("../../../Downloads/275722247_3127640084221767_4987571222713071970_n.png"), QSize(), QIcon::Normal, QIcon::Off);
+        mail->setIcon(icon3);
+        mail->setIconSize(QSize(23, 23));
+        calendrier = new QPushButton(page);
+        calendrier->setObjectName(QStringLiteral("calendrier"));
+        calendrier->setGeometry(QRect(690, 80, 111, 31));
+        calendrier->setStyleSheet(QLatin1String("QPushButton {\n"
+"		background-color: rgb(184, 247, 213);\n"
 "	border-style: solid;\n"
 "	border-width: 2px;\n"
 "	border-color: #9999aa;\n"
 "	border-radius: 14px;\n"
+"\n"
 "	color: black;\n"
 "	/*background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(0, 0, 255, 255), stop:1 rgba(255, 255, 255, 255));*/\n"
 "}\n"
@@ -231,30 +241,32 @@ public:
 "\n"
 "\n"
 "QPushButton:hover:!pressed {\n"
-"	background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(255, 0, 255, 255), stop:1 rgba(255, 255, 255, 255));\n"
+"	background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(0, 255, 0, 255), stop:1 rgba(255, 255, 255, 255));\n"
 "		color: #0c2f70;\n"
 "}\n"
 "\n"
 "QPushButton:disabled {\n"
 "		background-color: #aaaaaa;\n"
 "		color: #ffffff;\n"
-"}"));
+"}\n"
+""));
         QIcon icon4;
-        icon4.addFile(QStringLiteral("../../../Downloads/121113.png"), QSize(), QIcon::Normal, QIcon::Off);
-        pushButton_supprimer->setIcon(icon4);
-        pushButton_supprimer->setIconSize(QSize(20, 20));
-        label_6 = new QLabel(tab_3);
-        label_6->setObjectName(QStringLiteral("label_6"));
-        label_6->setGeometry(QRect(70, 20, 41, 21));
-        pushButton_3 = new QPushButton(tab_3);
-        pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
-        pushButton_3->setGeometry(QRect(180, 217, 91, 41));
-        pushButton_3->setStyleSheet(QLatin1String("QPushButton {\n"
-"	background-color: rgb(88, 255, 158);\n"
+        icon4.addFile(QStringLiteral("../../../Downloads/32223.png"), QSize(), QIcon::Normal, QIcon::Off);
+        calendrier->setIcon(icon4);
+        calendrier->setIconSize(QSize(20, 20));
+        label_7 = new QLabel(page);
+        label_7->setObjectName(QStringLiteral("label_7"));
+        label_7->setGeometry(QRect(350, 80, 41, 41));
+        tri = new QPushButton(page);
+        tri->setObjectName(QStringLiteral("tri"));
+        tri->setGeometry(QRect(540, 80, 111, 31));
+        tri->setStyleSheet(QLatin1String("QPushButton {\n"
+"		background-color: rgb(184, 247, 213);\n"
 "	border-style: solid;\n"
 "	border-width: 2px;\n"
 "	border-color: #9999aa;\n"
 "	border-radius: 14px;\n"
+"\n"
 "	color: black;\n"
 "	/*background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(0, 0, 255, 255), stop:1 rgba(255, 255, 255, 255));*/\n"
 "}\n"
@@ -267,41 +279,36 @@ public:
 "\n"
 "\n"
 "QPushButton:hover:!pressed {\n"
-"	background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(255, 0, 255, 255), stop:1 rgba(255, 255, 255, 255));\n"
+"	background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(0, 255, 0, 255), stop:1 rgba(255, 255, 255, 255));\n"
 "		color: #0c2f70;\n"
 "}\n"
+"\n"
 "\n"
 "QPushButton:disabled {\n"
 "		background-color: #aaaaaa;\n"
 "		color: #ffffff;\n"
 "}"));
         QIcon icon5;
-        icon5.addFile(QStringLiteral("../../../Downloads/PDF_file_icon.svg.png"), QSize(), QIcon::Normal, QIcon::Off);
-        pushButton_3->setIcon(icon5);
-        pushButton_3->setIconSize(QSize(20, 20));
-        lineEdit_9 = new QLineEdit(tab_3);
-        lineEdit_9->setObjectName(QStringLiteral("lineEdit_9"));
-        lineEdit_9->setGeometry(QRect(870, 130, 151, 20));
-        lineEdit_9->setStyleSheet(QLatin1String("background-color: rgb(183, 232, 201);\n"
-""));
-        label_3 = new QLabel(tab_3);
-        label_3->setObjectName(QStringLiteral("label_3"));
-        label_3->setGeometry(QRect(70, 80, 51, 41));
-        lineEdit_etat = new QLineEdit(tab_3);
-        lineEdit_etat->setObjectName(QStringLiteral("lineEdit_etat"));
-        lineEdit_etat->setGeometry(QRect(180, 50, 113, 22));
-        lineEdit_etat->setStyleSheet(QLatin1String("\n"
-"background-color: rgb(184, 247, 213);\n"
-"\n"
-""));
-        label = new QLabel(tab_3);
+        icon5.addFile(QStringLiteral("../../../Downloads/271743198_464449928646161_2550356874147298555_n.png"), QSize(), QIcon::Normal, QIcon::Off);
+        tri->setIcon(icon5);
+        tri->setIconSize(QSize(25, 25));
+        label_6 = new QLabel(page);
+        label_6->setObjectName(QStringLiteral("label_6"));
+        label_6->setGeometry(QRect(10, 70, 41, 21));
+        label = new QLabel(page);
         label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(70, 50, 51, 21));
-        pushButton_modify = new QPushButton(tab_3);
-        pushButton_modify->setObjectName(QStringLiteral("pushButton_modify"));
-        pushButton_modify->setGeometry(QRect(650, 50, 141, 41));
-        pushButton_modify->setStyleSheet(QLatin1String("QPushButton {\n"
-"	background-color: rgb(88, 255, 158);\n"
+        label->setGeometry(QRect(0, 100, 51, 21));
+        tableView = new QTableView(page);
+        tableView->setObjectName(QStringLiteral("tableView"));
+        tableView->setGeometry(QRect(360, 190, 681, 281));
+        tableView->viewport()->setProperty("cursor", QVariant(QCursor(Qt::UpArrowCursor)));
+        tableView->setStyleSheet(QStringLiteral("background-color: rgb(184, 247, 213);"));
+        pushButton_ajout = new QPushButton(page);
+        pushButton_ajout->setObjectName(QStringLiteral("pushButton_ajout"));
+        pushButton_ajout->setGeometry(QRect(30, 250, 161, 31));
+        pushButton_ajout->setStyleSheet(QLatin1String("QPushButton {\n"
+"	background-color: rgb(184, 247, 213);\n"
+"	\n"
 "	border-style: solid;\n"
 "	border-width: 2px;\n"
 "	border-color: #9999aa;\n"
@@ -316,25 +323,25 @@ public:
 "		color: #fffffe;\n"
 "}\n"
 "\n"
-"\n"
 "QPushButton:hover:!pressed {\n"
-"	background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(255, 0, 255, 255), stop:1 rgba(255, 255, 255, 255));\n"
+"	background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(0, 255, 0, 255), stop:1 rgba(255, 255, 255, 255));\n"
 "		color: #0c2f70;\n"
 "}\n"
+"\n"
 "\n"
 "QPushButton:disabled {\n"
 "		background-color: #aaaaaa;\n"
 "		color: #ffffff;\n"
 "}"));
         QIcon icon6;
-        icon6.addFile(QStringLiteral("../../../Downloads/45706.png"), QSize(), QIcon::Normal, QIcon::Off);
-        pushButton_modify->setIcon(icon6);
-        pushButton_modify->setIconSize(QSize(20, 20));
-        pushButton_12 = new QPushButton(tab_3);
-        pushButton_12->setObjectName(QStringLiteral("pushButton_12"));
-        pushButton_12->setGeometry(QRect(60, 190, 91, 41));
-        pushButton_12->setStyleSheet(QLatin1String("QPushButton {\n"
-"	background-color: rgb(88, 255, 158);\n"
+        icon6.addFile(QStringLiteral("../../../Downloads/64579.png"), QSize(), QIcon::Normal, QIcon::Off);
+        pushButton_ajout->setIcon(icon6);
+        pushButton_ajout->setIconSize(QSize(20, 20));
+        pushButton_modify = new QPushButton(page);
+        pushButton_modify->setObjectName(QStringLiteral("pushButton_modify"));
+        pushButton_modify->setGeometry(QRect(30, 320, 161, 31));
+        pushButton_modify->setStyleSheet(QLatin1String("QPushButton {\n"
+"		background-color: rgb(184, 247, 213);\n"
 "	border-style: solid;\n"
 "	border-width: 2px;\n"
 "	border-color: #9999aa;\n"
@@ -351,41 +358,96 @@ public:
 "\n"
 "\n"
 "QPushButton:hover:!pressed {\n"
-"	background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(255, 0, 255, 255), stop:1 rgba(255, 255, 255, 255));\n"
+"	background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(0, 255, 0, 255), stop:1 rgba(255, 255, 255, 255));\n"
 "		color: #0c2f70;\n"
 "}\n"
+"\n"
 "\n"
 "QPushButton:disabled {\n"
 "		background-color: #aaaaaa;\n"
 "		color: #ffffff;\n"
 "}"));
         QIcon icon7;
-        icon7.addFile(QStringLiteral("../../../Downloads/271743198_464449928646161_2550356874147298555_n.png"), QSize(), QIcon::Normal, QIcon::Off);
-        pushButton_12->setIcon(icon7);
-        pushButton_12->setIconSize(QSize(25, 25));
-        lineEdit_date = new QDateTimeEdit(tab_3);
+        icon7.addFile(QStringLiteral("../../../Downloads/45706.png"), QSize(), QIcon::Normal, QIcon::Off);
+        pushButton_modify->setIcon(icon7);
+        pushButton_modify->setIconSize(QSize(20, 20));
+        lineEdit_recherche = new QLineEdit(page);
+        lineEdit_recherche->setObjectName(QStringLiteral("lineEdit_recherche"));
+        lineEdit_recherche->setGeometry(QRect(900, 160, 151, 20));
+        lineEdit_recherche->setStyleSheet(QStringLiteral(""));
+        pushButton = new QPushButton(page);
+        pushButton->setObjectName(QStringLiteral("pushButton"));
+        pushButton->setGeometry(QRect(950, 480, 93, 28));
+        pushButton->setStyleSheet(QLatin1String("QPushButton:hover:!pressed {\n"
+"	background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(0, 255, 0, 255), stop:1 rgba(255, 255, 255, 255));\n"
+"		color: #0c2f70;\n"
+"}\n"
+""));
+        cb_pdf = new QComboBox(page);
+        cb_pdf->setObjectName(QStringLiteral("cb_pdf"));
+        cb_pdf->setGeometry(QRect(390, 80, 101, 41));
+        cb_pdf->setStyleSheet(QLatin1String("background-color: rgb(184, 247, 213);\n"
+"  color: black;\n"
+"  padding: 10px;\n"
+"  text-align: center;\n"
+"font-family:calibri;\n"
+"  font-size: 13px;\n"
+"  margin: 2px 1px;\n"
+"  border-radius : 16px;"));
+        label_3 = new QLabel(page);
+        label_3->setObjectName(QStringLiteral("label_3"));
+        label_3->setGeometry(QRect(0, 130, 51, 51));
+        lineEdit_etat = new QLineEdit(page);
+        lineEdit_etat->setObjectName(QStringLiteral("lineEdit_etat"));
+        lineEdit_etat->setGeometry(QRect(70, 100, 113, 31));
+        lineEdit_etat->setStyleSheet(QStringLiteral("background-color: rgb(184, 247, 213);"));
+        lineEdit_date = new QDateTimeEdit(page);
         lineEdit_date->setObjectName(QStringLiteral("lineEdit_date"));
-        lineEdit_date->setGeometry(QRect(180, 80, 151, 31));
+        lineEdit_date->setGeometry(QRect(60, 140, 151, 31));
         lineEdit_date->setStyleSheet(QLatin1String("background-color: rgb(184, 247, 213);\n"
 "font: 9pt \"MS Shell Dlg 2\";\n"
 ""));
-        tableView = new QTableView(tab_3);
-        tableView->setObjectName(QStringLiteral("tableView"));
-        tableView->setGeometry(QRect(450, 160, 571, 281));
-        tableView->viewport()->setProperty("cursor", QVariant(QCursor(Qt::UpArrowCursor)));
-        tableView->setStyleSheet(QLatin1String("background-color: rgb(184, 247, 213);\n"
-""));
-        tabWidget->addTab(tab_3, QString());
-        tab_4 = new QWidget();
-        tab_4->setObjectName(QStringLiteral("tab_4"));
-        tabWidget->addTab(tab_4, QString());
-        tab_5 = new QWidget();
-        tab_5->setObjectName(QStringLiteral("tab_5"));
-        tabWidget->addTab(tab_5, QString());
+        lineEdit_id = new QLineEdit(page);
+        lineEdit_id->setObjectName(QStringLiteral("lineEdit_id"));
+        lineEdit_id->setGeometry(QRect(70, 60, 113, 31));
+        lineEdit_id->setStyleSheet(QStringLiteral("background-color: rgb(184, 247, 213);"));
+        label_pic = new QLabel(page);
+        label_pic->setObjectName(QStringLiteral("label_pic"));
+        label_pic->setGeometry(QRect(960, 20, 81, 71));
+        stackedWidget->addWidget(page);
+        page_2 = new QWidget();
+        page_2->setObjectName(QStringLiteral("page_2"));
+        pushButton_2 = new QPushButton(page_2);
+        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
+        pushButton_2->setGeometry(QRect(250, 390, 93, 28));
+        pushButton_2->setStyleSheet(QLatin1String("QPushButton:hover:!pressed {\n"
+"	background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(0, 255, 0, 255), stop:1 rgba(255, 255, 255, 255));\n"
+"		color: #0c2f70;\n"
+"}"));
+        lineEdit = new QLineEdit(page_2);
+        lineEdit->setObjectName(QStringLiteral("lineEdit"));
+        lineEdit->setGeometry(QRect(110, 40, 381, 22));
+        lineEdit->setStyleSheet(QStringLiteral("background-color: rgb(184, 247, 213);"));
+        lineEdit_2 = new QLineEdit(page_2);
+        lineEdit_2->setObjectName(QStringLiteral("lineEdit_2"));
+        lineEdit_2->setGeometry(QRect(110, 80, 251, 41));
+        lineEdit_2->setStyleSheet(QStringLiteral("background-color: rgb(184, 247, 213);"));
+        textEdit = new QTextEdit(page_2);
+        textEdit->setObjectName(QStringLiteral("textEdit"));
+        textEdit->setGeometry(QRect(120, 140, 391, 231));
+        textEdit->setStyleSheet(QStringLiteral("background-color: rgb(184, 247, 213);"));
+        pushButton_3 = new QPushButton(page_2);
+        pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
+        pushButton_3->setGeometry(QRect(960, 30, 93, 28));
+        pushButton_3->setStyleSheet(QLatin1String("QPushButton:hover:!pressed {\n"
+"	background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(0, 255, 0, 255), stop:1 rgba(255, 255, 255, 255));\n"
+"		color: #0c2f70;\n"
+"}"));
+        stackedWidget->addWidget(page_2);
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 1115, 26));
+        menuBar->setGeometry(QRect(0, 0, 1235, 26));
         MainWindow->setMenuBar(menuBar);
         mainToolBar = new QToolBar(MainWindow);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
@@ -393,10 +455,19 @@ public:
         statusBar = new QStatusBar(MainWindow);
         statusBar->setObjectName(QStringLiteral("statusBar"));
         MainWindow->setStatusBar(statusBar);
+        toolBar = new QToolBar(MainWindow);
+        toolBar->setObjectName(QStringLiteral("toolBar"));
+        MainWindow->addToolBar(Qt::TopToolBarArea, toolBar);
+        toolBar_2 = new QToolBar(MainWindow);
+        toolBar_2->setObjectName(QStringLiteral("toolBar_2"));
+        MainWindow->addToolBar(Qt::LeftToolBarArea, toolBar_2);
+        toolBar_3 = new QToolBar(MainWindow);
+        toolBar_3->setObjectName(QStringLiteral("toolBar_3"));
+        MainWindow->addToolBar(Qt::RightToolBarArea, toolBar_3);
 
         retranslateUi(MainWindow);
 
-        tabWidget->setCurrentIndex(0);
+        stackedWidget->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -405,24 +476,32 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "Gestion des Clients", Q_NULLPTR));
-        lineEdit_id->setText(QString());
-        lineEdit_id->setPlaceholderText(QApplication::translate("MainWindow", "your id please....", Q_NULLPTR));
-        pushButton_7->setText(QApplication::translate("MainWindow", "mail", Q_NULLPTR));
-        pushButton_4->setText(QApplication::translate("MainWindow", "Statistique", Q_NULLPTR));
-        pushButton_6->setText(QApplication::translate("MainWindow", "Historique", Q_NULLPTR));
-        pushButton_ajout->setText(QApplication::translate("MainWindow", "Ajouter", Q_NULLPTR));
         pushButton_supprimer->setText(QApplication::translate("MainWindow", "Supprimer", Q_NULLPTR));
+        stat->setText(QApplication::translate("MainWindow", "Statistique", Q_NULLPTR));
+        pdf->setText(QApplication::translate("MainWindow", "Pdf", Q_NULLPTR));
+        mail->setText(QApplication::translate("MainWindow", "mail", Q_NULLPTR));
+        calendrier->setText(QApplication::translate("MainWindow", "calendrier", Q_NULLPTR));
+        label_7->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:10pt; font-weight:600;\">id</span></p></body></html>", Q_NULLPTR));
+        tri->setText(QApplication::translate("MainWindow", "Tri", Q_NULLPTR));
         label_6->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:10pt; font-weight:600;\">id</span></p></body></html>", Q_NULLPTR));
-        pushButton_3->setText(QApplication::translate("MainWindow", "Pdf", Q_NULLPTR));
-        lineEdit_9->setPlaceholderText(QApplication::translate("MainWindow", "rechercher", Q_NULLPTR));
+        label->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:10pt; font-weight:600;\">etat </span></p></body></html>", Q_NULLPTR));
+        pushButton_ajout->setText(QApplication::translate("MainWindow", "Ajouter", Q_NULLPTR));
+        pushButton_modify->setText(QApplication::translate("MainWindow", "Modifier", Q_NULLPTR));
+        lineEdit_recherche->setPlaceholderText(QApplication::translate("MainWindow", "rechercher", Q_NULLPTR));
+        pushButton->setText(QApplication::translate("MainWindow", "confirmer", Q_NULLPTR));
         label_3->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:10pt; font-weight:600;\">date</span></p></body></html>", Q_NULLPTR));
         lineEdit_etat->setPlaceholderText(QApplication::translate("MainWindow", "etat batterie....", Q_NULLPTR));
-        label->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:10pt; font-weight:600;\">etat </span></p></body></html>", Q_NULLPTR));
-        pushButton_modify->setText(QApplication::translate("MainWindow", "Modifier", Q_NULLPTR));
-        pushButton_12->setText(QApplication::translate("MainWindow", "Tri", Q_NULLPTR));
-        tabWidget->setTabText(tabWidget->indexOf(tab_3), QApplication::translate("MainWindow", "ajout", Q_NULLPTR));
-        tabWidget->setTabText(tabWidget->indexOf(tab_4), QApplication::translate("MainWindow", "consulter ", Q_NULLPTR));
-        tabWidget->setTabText(tabWidget->indexOf(tab_5), QApplication::translate("MainWindow", "elimner", Q_NULLPTR));
+        lineEdit_id->setText(QString());
+        lineEdit_id->setPlaceholderText(QApplication::translate("MainWindow", "your id please....", Q_NULLPTR));
+        label_pic->setText(QString());
+        pushButton_2->setText(QApplication::translate("MainWindow", "send", Q_NULLPTR));
+        lineEdit->setPlaceholderText(QApplication::translate("MainWindow", "email", Q_NULLPTR));
+        lineEdit_2->setPlaceholderText(QApplication::translate("MainWindow", "subject", Q_NULLPTR));
+        textEdit->setPlaceholderText(QApplication::translate("MainWindow", "your text.........", Q_NULLPTR));
+        pushButton_3->setText(QApplication::translate("MainWindow", "return", Q_NULLPTR));
+        toolBar->setWindowTitle(QApplication::translate("MainWindow", "toolBar", Q_NULLPTR));
+        toolBar_2->setWindowTitle(QApplication::translate("MainWindow", "toolBar_2", Q_NULLPTR));
+        toolBar_3->setWindowTitle(QApplication::translate("MainWindow", "toolBar_3", Q_NULLPTR));
     } // retranslateUi
 
 };
