@@ -27,7 +27,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->tableView_2->setModel(e.afficher());
     ui->leidevenement->setMaxLength(6);
     ui->lenomevenement->setMaxLength(6);
-    QPixmap pix("C:/Users/user/Pictures/logo.ico.png");
+    QPixmap pix("C:/Users/user/Pictures/logo.png");
         ui->label_pic->setPixmap(pix.scaled(100,100,Qt::KeepAspectRatio));
     proxy = new QSortFilterProxyModel();
             proxy->setSourceModel(e.afficher());
@@ -255,10 +255,7 @@ void MainWindow::on_le_rech_textChanged(const QString &arg1)
 proxy->setFilterFixedString(arg1);}
 
 
-void MainWindow::on_comboBox_currentIndexChanged(int index)
-{
-       ui->tableView_2->sortByColumn(index,Qt::AscendingOrder);
-}
+
 
 void MainWindow::on_pushButton_4_clicked()
 {

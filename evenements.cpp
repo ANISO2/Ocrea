@@ -181,7 +181,7 @@ bool evenements::verifiernom(QString nomevenement) {
 
 
 
-QSqlQueryModel* evenements::rechercher_nom(QString nomevenement)
+/*QSqlQueryModel* evenements::rechercher_nom(QString nomevenement)
 {
     QSqlQueryModel *model=new QSqlQueryModel();
 
@@ -197,7 +197,7 @@ QSqlQueryModel* evenements::rechercher_nom(QString nomevenement)
     query.exec();
     model->setQuery(query);
     return model;
-}
+}*/
 QSqlQueryModel* evenements::tri_date()
 {
     QSqlQueryModel* model = new QSqlQueryModel();
