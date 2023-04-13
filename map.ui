@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>map</class>
+ <widget class="QDialog" name="map">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>811</width>
+    <height>468</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="WebAxWidget" name="WebBrowser">
+   <property name="control" stdset="0">
+    <string>{8856F961-340A-11D0-A96B-00C04FD705A2}</string>
+   </property>
+   <property name="focusPolicy" stdset="0">
+    <enum>Qt::StrongFocus</enum>
+   </property>
+   <property name="geometry" stdset="0">
+    <rect>
+     <x>0</x>
+     <y>10</y>
+     <width>811</width>
+     <height>441</height>
+    </rect>
+   </property>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QAxWidget</class>
+   <extends>QWidget</extends>
+   <header>qaxwidget.h</header>
+  </customwidget>
+  <customwidget>
+   <class>WebAxWidget</class>
+   <extends>QAxWidget</extends>
+   <header>webaxwidget.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

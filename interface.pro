@@ -1,10 +1,18 @@
 QT       += core gui sql
 QT       += sql
-
+QT += printsupport
+QT += multimedia
+QT += multimediawidgets
+QT += charts
+QT += gui
+QT       += core gui sql
+QT       += printsupport
+QT       += core gui sql network multimedia multimediawidgets charts printsupport widgets axcontainer
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+win32:RC_ICONS += image/logo.ico
 
 CONFIG += c++11
-
 # The following define makes your compiler emit warnings if you use
 # any Qt feature that has been marked deprecated (the exact warnings
 # depend on your compiler). Please consult the documentation of the
@@ -20,16 +28,20 @@ SOURCES += \
     connection.cpp \
     evenements.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    map.cpp
 
 HEADERS += \
     connection.h \
     evenements.h \
     mainwindow.h \
-    mainwindow.h
+    mainwindow.h \
+    map.h
+
 
 FORMS += \
-    mainwindow.ui
+    mainwindow.ui \
+    map.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

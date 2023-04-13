@@ -3,10 +3,16 @@
 #include<QSqlQuery>
 #include<QSqlQueryModel>
 #include <QDateTime>
+#include <QtCharts/QPieSlice>
+#include <QGridLayout>
+#include <QtCharts/QChartView>
+#include <QtCharts/QLineSeries>
+#include <QtCharts>
+#include <QChartView>
 class evenements
 {
 private:
-    QString idevenement,nomevenement,duree,urlvideo;
+    QString idevenement,nomevenement,etat,urlvideo;
     QDateTime datedebut;
 public:
     evenements(){}
@@ -14,7 +20,7 @@ public:
     QString getidevenement(){return idevenement ;}
     QString getnomevenement(){return nomevenement;}
     QDateTime getdatedebut(){return datedebut;}
-    QString getduree(){return duree ;}
+    QString getduree(){return etat ;}
     QString geturlvideo(){return urlvideo ;}
 
 
@@ -22,7 +28,8 @@ public:
     void setnomevenement(QString p ){nomevenement=p;}
     void setdatedebut(QDateTime d){datedebut=d;}
     void seturlvideo (QString a){urlvideo =a;}
-    void setduree (QString b ){duree =b;}
+    void setduree (QString b ){etat =b;}
+
 
 
     bool ajouter_evenements();
@@ -30,6 +37,14 @@ public:
     bool supprimer(QString);
     bool update(QString);
     bool verifierid(QString);
+    QSqlQueryModel * rechercher_nom(QString);
+    bool verifiernom(QString);
+    QSqlQueryModel* tri_date();
+    QSqlQueryModel* rechercher_url(QString );
+    QChartView *statistique();
+
+
+
 };
 
 #endif // EVENEMENTS_H

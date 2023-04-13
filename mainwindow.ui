@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>813</width>
-    <height>514</height>
+    <width>889</width>
+    <height>689</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -44,58 +44,6 @@ background-color: rgb(184, 247, 213);
     </property>
     <property name="text">
      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600; color:#000000;&quot;&gt;Nom&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_11">
-    <property name="geometry">
-     <rect>
-      <x>660</x>
-      <y>430</y>
-      <width>93</width>
-      <height>28</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton {
-	background-color: rgb(53, 191, 129);
-
-	border-style: solid;
-	border-width: 2px;
-	border-color: #9999aa;
-	border-radius: 14px;
-	color: black;
-	/*background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(0, 0, 255, 255), stop:1 rgba(255, 255, 255, 255));*/
-}
-
-
-QPushButton:pressed {
-	background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(0, 255, 255, 255), stop:1 rgba(255, 255, 255, 255));
-		color: #fffffe;
-}
-
-
-QPushButton:hover:!pressed {
-	background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(255, 0, 255, 255), stop:1 rgba(255, 255, 255, 255));
-		color: #0c2f70;
-}
-
-QPushButton:disabled {
-		background-color: #aaaaaa;
-		color: #ffffff;
-}</string>
-    </property>
-    <property name="text">
-     <string>Confirmer</string>
-    </property>
-    <property name="icon">
-     <iconset>
-      <normaloff>../../Downloads/confirm-16 (1).png</normaloff>../../Downloads/confirm-16 (1).png</iconset>
-    </property>
-    <property name="iconSize">
-     <size>
-      <width>20</width>
-      <height>20</height>
-     </size>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_7">
@@ -251,7 +199,7 @@ QPushButton:disabled {
      </size>
     </property>
    </widget>
-   <widget class="QLineEdit" name="leduree">
+   <widget class="QLineEdit" name="leetat">
     <property name="geometry">
      <rect>
       <x>140</x>
@@ -327,7 +275,7 @@ QPushButton:disabled {
      </rect>
     </property>
     <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600; color:#000000;&quot;&gt;durée&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600; color:#000000;&quot;&gt;etat &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QTableView" name="tableView_2">
@@ -422,7 +370,7 @@ QPushButton:disabled {
      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a name=&quot;docs-internal-guid-b627337d-7fff-a2e1-b3fd-494d1fa366f1&quot;/&gt;&lt;span style=&quot; font-family:'Times New Roman'; font-size:10pt; font-weight:600; color:#000000; background-color:transparent;&quot;&gt;i&lt;/span&gt;&lt;span style=&quot; font-family:'Times New Roman'; font-size:10pt; font-weight:600; color:#000000; background-color:transparent;&quot;&gt;d&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="lineEdit_9">
+   <widget class="QLineEdit" name="le_rech">
     <property name="geometry">
      <rect>
       <x>610</x>
@@ -666,13 +614,67 @@ background-color: rgb(184, 247, 213);
 </string>
     </property>
    </widget>
+   <widget class="QComboBox" name="comboBox">
+    <property name="geometry">
+     <rect>
+      <x>520</x>
+      <y>150</y>
+      <width>73</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string>nom</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>date</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>etat</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>url</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QWidget" name="gridLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>430</y>
+      <width>401</width>
+      <height>251</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="gridLayout"/>
+   </widget>
+   <widget class="QLabel" name="label_pic">
+    <property name="geometry">
+     <rect>
+      <x>790</x>
+      <y>0</y>
+      <width>81</width>
+      <height>111</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>813</width>
+     <width>889</width>
      <height>26</height>
     </rect>
    </property>
