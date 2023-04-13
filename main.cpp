@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
 
     connection c;
     bool test=c.createconnection();
-     equipement_window w;
+    equipement_window w;
 
     if(test)
     {
