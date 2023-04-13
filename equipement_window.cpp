@@ -399,10 +399,11 @@ void equipement_window::on_pushButton_image_clicked()
         }
     }
 }
+
 void equipement_window::on_pushButton_codeQR_clicked()
 {
     // Récupérer la ligne sélectionnée dans la vue de la table
-    QModelIndex index = ui->tableView->currentIndex();
+     QModelIndex index = ui->tableView->currentIndex();
 
     // Vérifier si une ligne est sélectionnée
     if (index.isValid()) {
