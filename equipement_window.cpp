@@ -26,6 +26,10 @@
 #include <QtCharts>
 #include <QtCharts/QChart>
 #include <QSqlTableModel>
+#include <QDebug>
+#include "arduino.h"
+#include <QSerialPort>
+#include <QSqlError>
 
 
 
@@ -34,6 +38,24 @@ equipement_window::equipement_window(QWidget *parent) :
       ui(new Ui::equipement_window)
 {
     ui->setupUi(this);
+    int ret=A.connect_arduino();
+
+             switch (ret) {
+             case 0 :
+                 qDebug()<<"Arduino is available and connected to : "<<A.getarduino_port_name();
+                 break;
+
+             case 1 :
+                 qDebug()<<"Arduino is available but not connected to : "<<A.getarduino_port_name();
+                 break;
+             case -1 :
+                 qDebug()<<"Arduino is not available ";
+                 break;
+             }
+
+       QObject::connect(A.getserial(),SIGNAL(readyRead()),this,SLOT(concatRFID()));
+
+
     tableView = ui->tableView;
 
     ui->lineEdit_7->addItem(QIcon("C:\\Users\\Ghailen\\Desktop\\qttttt\\yes.png"),"bon etat");
@@ -419,3 +441,23 @@ void equipement_window::on_pushButton_codeQR_clicked()
     }
 }
 
+//***************arduino ***************************
+
+void equipement_window::on_pushButton_arduino_clicked()
+{
+    QString valeur = ui->lineEdit_arduinoEqui->text();
+    if (valeur != "0")
+    {
+        if (A.chercher_id(valeur) == 1 )
+        {
+            A.write_to_arduino("1");
+        }
+        else if (A.chercher_id(valeur) == 0)
+        {
+            A.write_to_arduino("0");
+            QMessageBox::critical(this, "ID non disponible",
+                                  "L'ID " + valeur + " n'est pas disponible. Veuillez entrer un ID valide.");
+        }
+    }
+    (valeur = "0");
+}

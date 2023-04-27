@@ -6,7 +6,7 @@
 #include <QDialog>
 #include <QSqlQuery>
 #include <QtCharts>
-
+#include "arduino.h"
 QT_BEGIN_NAMESPACE
 namespace Ui { class equipement_window; }
 QT_END_NAMESPACE
@@ -21,6 +21,16 @@ public:
 private:
     Ui::equipement_window *ui;
     equipement e;
+
+    int selectedRow;
+
+     // Déclarer Mod en tant que variable membre de la classe Equipement_Window
+     QSqlQueryModel *Mod;
+
+     void updateTableView();
+
+   QByteArray data; // variable contenant les données reçues
+   Arduino A;
    QVector<equipement> inventaire;
    QLabel *labelLOGOPIC;
    QTableView *tableView;
@@ -37,5 +47,6 @@ private:
     void on_pushButton_Stat_clicked();
     void on_pushButton_image_clicked();
     void on_pushButton_codeQR_clicked();
+    void on_pushButton_arduino_clicked();
 };
 #endif // EQUIPEMENT_WINDOW_H
