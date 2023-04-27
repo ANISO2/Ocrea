@@ -9,6 +9,7 @@ CONFIG   += console
 QT += printsupport
 QT += network
 QT += multimedia
+QT += serialport
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -29,6 +30,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
+    arduino.cpp \
     batteries.cpp \
     calendrier.cpp \
         main.cpp \
@@ -38,6 +40,7 @@ SOURCES += \
     statistiques.cpp
 
 HEADERS += \
+    arduino.h \
 batteries.h \
     calendrier.h \
  mainwindow.h \

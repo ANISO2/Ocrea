@@ -9,11 +9,13 @@
 #include <QPixmap>
 #include <QSplashScreen>
 #include <QTimer>
-#include <QMessageBox>
+
 
 int main(int argc, char *argv[])
 {
+  Arduino A;
     QApplication a(argc, argv);
+
     Connection c;
     bool test = c.createconnect();
     MainWindow w;
@@ -49,6 +51,7 @@ int main(int argc, char *argv[])
                               "Connection failed.\nClick Cancel to exit.",
                               QMessageBox::Cancel);
     }*/
+
 
     return a.exec();
 }

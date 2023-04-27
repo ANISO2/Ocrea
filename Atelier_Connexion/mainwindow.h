@@ -3,6 +3,7 @@
 #include <QMainWindow>
 #include"batteries.h"
 #include "smtp.h"
+#include "arduino.h"
 
 namespace Ui {
 class MainWindow;
@@ -44,9 +45,22 @@ private slots:
 
     void on_pushButton_3_clicked();
 
+
+
+
+
+    void on_pushButton_4_clicked();
+
+    void on_pushButton_5_clicked();
+    void update_label();
+
+
 private:
     Ui::MainWindow *ui;
     batteries B;
+    Arduino A;
+    QByteArray data;
+    QSerialPort * serial;
 
 };
 

@@ -25,6 +25,8 @@
 #include<QChartView>
 #include<QPieSeries>
 #include<QPieSlice>
+#include"arduino.h"
+
 
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -32,6 +34,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    serial =new QSerialPort;
     QPixmap pix("C:/Users/21655/Pictures/e_power/logo.png");
     ui->label_pic->setPixmap(pix.scaled(100,100,Qt::KeepAspectRatio));
      ui->tableView->setModel(B.afficher());
@@ -56,13 +59,25 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->cb_pdf->setModel(B.getAllId());
 }*/
+     int ret=A.connect_arduino(); // lancer la connexion à arduino
+                        switch(ret){
+                        case(0):qDebug()<< "arduino is available and connected to : "<< A.getarduino_port_name();
+                            break;
+                        case(1):qDebug() << "arduino is available but not connected to :" <<A.getarduino_port_name();
+                           break;
+                        case(-1):qDebug() << "arduino is not available";
+                        }
+                         QObject::connect(A.getserial(),SIGNAL(readyRead()),this,SLOT(update_label()));
+
 
 
  }
 
 MainWindow::~MainWindow()
 {
-    delete ui;
+
+
+      delete ui;
 }
 
 
@@ -468,3 +483,36 @@ void MainWindow::on_pushButton_3_clicked()
      ui->stackedWidget->setCurrentIndex(1);
 
  }
+ void MainWindow::update_label()
+ {
+
+
+ }
+
+ void MainWindow::on_pushButton_5_clicked()   // implémentation du slot bouton on
+ {
+      A.write_to_arduino("1"); //envoyer 1 à arduino
+
+          QSqlQuery query;
+          query.prepare("UPDATE BATTERIES SET FLAME = :FLAME WHERE IDBATTERIE = 24272");
+          QString str = "1";
+          query.bindValue(":FLAME", str);
+          query.exec();
+          ui->tableView->setModel(B.afficher());
+
+ }
+
+ void MainWindow::on_pushButton_4_clicked()  // implémentation du slot bouton off
+ {
+
+      A.write_to_arduino("0");//envoyer 0 à arduino
+
+         QSqlQuery query;
+          query.prepare("UPDATE BATTERIES SET FLAME = :FLAME WHERE IDBATTERIE = 24272");
+          QString str = "0";
+          query.bindValue(":FLAME", str);
+          query.exec();
+          ui->tableView->setModel(B.afficher());
+      }
+
+
