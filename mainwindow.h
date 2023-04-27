@@ -4,6 +4,7 @@
 #include "voiture.h"
 #include <QFileDialog>
 #include <QPrinter>
+#include "arduino.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -27,8 +28,6 @@ private slots:
 
     void on_pushButton_9_clicked();
 
-    void on_pushButton_recherche_clicked();
-
 
     void on_pushButton_12_clicked();
 
@@ -43,9 +42,15 @@ private slots:
 
     void on_pushButton_7_clicked();
 
+    void on_pushButton_2_clicked();
+
 private:
     Ui::MainWindow *ui;
     voiture Etmp;
 
+
+    QByteArray data; // variable contenant les données reçues
+
+    Arduino A; // objet temporaire
 };
 #endif // MAINWINDOW_H

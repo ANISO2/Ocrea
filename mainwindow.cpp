@@ -18,6 +18,9 @@
 #include <QSortFilterProxyModel>
 #include <regex>
 #include <QAxObject>
+#include "arduino.h"
+
+
 
 
 
@@ -27,6 +30,16 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
      ui->setupUi(this);
+     int ret=A.connect_arduino(); // lancer la connexion à arduino
+     switch(ret){
+     case(0):qDebug()<< "arduino is available and connected to : "<< A.getarduino_port_name();
+         break;
+     case(1):qDebug() << "arduino is available but not connected to :" <<A.getarduino_port_name();
+        break;
+     case(-1):qDebug() << "arduino is not available";
+     }
+      QObject::connect(A.getserial(),SIGNAL(readyRead()),this,SLOT(update_label())); // permet de lancer
+      //le slot update_label suite à la reception du signal readyRead (reception des données).
     ui->tableView->setModel(Etmp.afficher_voiture());
 
    ui->lineEditcin->setValidator(new QRegExpValidator(QRegExp("[0-9]{8}")));
@@ -39,7 +52,10 @@ MainWindow::MainWindow(QWidget *parent)
                    ui->tableView->resizeRowsToContents();
                    ui->tableView->resizeColumnsToContents();
 
+
+
 }
+
 
 MainWindow::~MainWindow()
 {
@@ -413,5 +429,36 @@ try{
                                 QString d_info = QDateTime::currentDateTime().toString();
                                 QString message2=d_info+" - facture de voiture  !\n";
                                 cout << message2;
+
+}
+
+
+
+
+
+
+void MainWindow::on_pushButton_2_clicked()
+{
+     qDebug()<<"batterie";
+   QString niveau = A.read_from_arduino();
+       qDebug()<<niveau;
+        ui->label_10->setText(niveau);
+        QString cinAr=ui->lineEditarduino->text();
+        QSqlQuery qry;
+        qry.prepare("SELECT * FROM VOITURES WHERE CIN = :cinAr ");
+        qry.bindValue(":cinAr",cinAr);
+        qDebug()<<"prepar slect";
+        qry.exec();
+        if (qry.exec() && qry.next())
+        {
+            QString nom= qry.value("NOMVOITURE").toString();
+             QString cin= qry.value("CIN").toString();
+                ui->label_11->setText(nom);
+             QByteArray cinBytes = cin.toLocal8Bit();
+            A.write_to_arduino(cinBytes);
+
+
+
+        }
 
 }

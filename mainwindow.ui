@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>946</width>
-    <height>743</height>
+    <width>956</width>
+    <height>800</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -44,58 +44,6 @@ background-color: rgb(184, 247, 213);
     </property>
     <property name="text">
      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600; color:#000000;&quot;&gt;Nom&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_recherche">
-    <property name="geometry">
-     <rect>
-      <x>790</x>
-      <y>660</y>
-      <width>93</width>
-      <height>28</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton {
-	background-color: rgb(53, 191, 129);
-
-	border-style: solid;
-	border-width: 2px;
-	border-color: #9999aa;
-	border-radius: 14px;
-	color: black;
-	/*background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(0, 0, 255, 255), stop:1 rgba(255, 255, 255, 255));*/
-}
-
-
-QPushButton:pressed {
-	background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(0, 255, 255, 255), stop:1 rgba(255, 255, 255, 255));
-		color: #fffffe;
-}
-
-
-QPushButton:hover:!pressed {
-	background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(255, 0, 255, 255), stop:1 rgba(255, 255, 255, 255));
-		color: #0c2f70;
-}
-
-QPushButton:disabled {
-		background-color: #aaaaaa;
-		color: #ffffff;
-}</string>
-    </property>
-    <property name="text">
-     <string>Confirmer</string>
-    </property>
-    <property name="icon">
-     <iconset>
-      <normaloff>../../../Downloads/confirm-16.png</normaloff>../../../Downloads/confirm-16.png</iconset>
-    </property>
-    <property name="iconSize">
-     <size>
-      <width>20</width>
-      <height>20</height>
-     </size>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_7">
@@ -622,9 +570,9 @@ QPushButton:disabled {
    <widget class="QWidget" name="gridLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>500</x>
-      <y>400</y>
-      <width>431</width>
+      <x>420</x>
+      <y>380</y>
+      <width>511</width>
       <height>241</height>
      </rect>
     </property>
@@ -744,13 +692,108 @@ border:0;</string>
      </size>
     </property>
    </widget>
+   <widget class="QLineEdit" name="lineEditarduino">
+    <property name="geometry">
+     <rect>
+      <x>650</x>
+      <y>640</y>
+      <width>113</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(184, 247, 213);</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_10">
+    <property name="geometry">
+     <rect>
+      <x>650</x>
+      <y>680</y>
+      <width>291</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(184, 247, 213);
+border-radius: 10px;
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_11">
+    <property name="geometry">
+     <rect>
+      <x>510</x>
+      <y>680</y>
+      <width>111</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(184, 247, 213);
+border-radius: 10px;
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_2">
+    <property name="geometry">
+     <rect>
+      <x>780</x>
+      <y>640</y>
+      <width>93</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	background-color: rgb(53, 191, 129);
+
+	border-style: solid;
+	border-width: 2px;
+	border-color: #9999aa;
+	border-radius: 14px;
+	color: black;
+	/*background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(0, 0, 255, 255), stop:1 rgba(255, 255, 255, 255));*/
+}
+
+
+QPushButton:pressed {
+	background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(0, 255, 255, 255), stop:1 rgba(255, 255, 255, 255));
+		color: #fffffe;
+}
+
+
+QPushButton:hover:!pressed {
+	background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(255, 0, 255, 255), stop:1 rgba(255, 255, 255, 255));
+		color: #0c2f70;
+}
+
+QPushButton:disabled {
+		background-color: #aaaaaa;
+		color: #ffffff;
+}</string>
+    </property>
+    <property name="text">
+     <string>Confirmer</string>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>../../../Downloads/confirm-16.png</normaloff>../../../Downloads/confirm-16.png</iconset>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>946</width>
+     <width>956</width>
      <height>26</height>
     </rect>
    </property>
