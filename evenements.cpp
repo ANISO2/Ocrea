@@ -72,7 +72,7 @@ model->setQuery("SELECT * FROM EVENEMENTS");
 model->setHeaderData(0,Qt::Horizontal,QObject::tr("idevenement"));
 model->setHeaderData(1,Qt::Horizontal,QObject::tr("nomevenement")),
 model->setHeaderData(2,Qt::Horizontal,QObject::tr("datedebut"));
-model->setHeaderData(3,Qt::Horizontal,QObject::tr("duree"));
+model->setHeaderData(3,Qt::Horizontal,QObject::tr("etat"));
 model->setHeaderData(4,Qt::Horizontal,QObject::tr("urlvideo"));
 
 

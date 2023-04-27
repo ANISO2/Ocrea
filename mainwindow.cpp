@@ -36,6 +36,16 @@ MainWindow::MainWindow(QWidget *parent)
             ui->tableView_2->setModel(proxy);
                 ui->tableView_2->resizeRowsToContents();
                 ui->tableView_2->resizeColumnsToContents();
+                int ret=A.connect_arduino(); // lancer la connexion à arduino
+                   switch(ret){
+                   case(0):qDebug()<< "arduino is available and connected to : "<< A.getarduino_port_name();
+                       break;
+                   case(1):qDebug() << "arduino is available but not connected to :" <<A.getarduino_port_name();
+                      break;
+                   case(-1):qDebug() << "arduino is not available";
+                   }
+                    QObject::connect(A.getserial(),SIGNAL(readyRead()),this,SLOT(update_label())); // permet de lancer
+                    //le slot update_label suite à la reception du signal readyRead (reception des données).
 
 }
 
@@ -269,3 +279,43 @@ void MainWindow::on_pushButton_6_clicked()
     m=new map();
     m->show();
 }
+void MainWindow::update_label()
+{
+    data=A.read_from_arduino();
+
+    if(data=="1")
+
+        ui->label_3->setText("ON"); // si les données reçues de arduino via la liaison série sont égales à 1
+    // alors afficher ON
+
+    else if (data=="0")
+
+        ui->label_3->setText("OFF");   // si les données reçues de arduino via la liaison série sont égales à 0
+     //alors afficher ON
+}
+
+void MainWindow::on_pushButton_9_clicked()   // implémentation du slot bouton on
+ {
+      A.write_to_arduino("1"); //envoyer 1 à arduino
+
+          QSqlQuery query;
+          query.prepare("UPDATE BATTERIES SET FLAME = :FLAME WHERE IDBATTERIE = 10");
+          QString str = "1";
+          query.bindValue(":FLAME", str);
+          query.exec();
+
+
+ }
+
+ void MainWindow::on_pushButton_5_clicked()  // implémentation du slot bouton off
+ {
+
+      A.write_to_arduino("0");//envoyer 0 à arduino
+
+         QSqlQuery query;
+          query.prepare("UPDATE BATTERIES SET FLAME = :FLAME WHERE IDBATTERIE = 10");
+          QString str = "0";
+          query.bindValue(":FLAME", str);
+          query.exec();
+
+      }

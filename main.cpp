@@ -3,6 +3,7 @@
 #include <QApplication>
 #include <QMessageBox>
 #include <QApplication>
+#include <QCoreApplication>
 
 int main(int argc, char *argv[])
 {

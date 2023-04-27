@@ -8,6 +8,7 @@
 #include <QPainter>
 #include <QSortFilterProxyModel>
 #include "map.h"
+#include"arduino.h"
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -59,10 +60,20 @@ private slots:
 
     void on_pushButton_6_clicked();
 
+    void on_pushButton_clicked();
+    void on_pushButton_9_clicked();
+
+
+    void on_pushButton_2_clicked();
+    void update_label();
+
 private:
     Ui::MainWindow *ui;
     evenements e;
     map *m;
        QLabel *labelLOGOPIC;
+       QByteArray data; // variable contenant les données reçues
+
+           Arduino A;
 };
 #endif // MAINWINDOW_H
