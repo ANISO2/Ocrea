@@ -440,10 +440,10 @@ try{
 void MainWindow::on_pushButton_2_clicked()
 {
      qDebug()<<"batterie";
-   QString niveau = A.read_from_arduino();
+   QString niveau = A.read_from_arduino();                                                                                    //ta9ra elli b3athtou fel serial
        qDebug()<<niveau;
-        ui->label_10->setText(niveau);
-        QString cinAr=ui->lineEditarduino->text();
+        ui->label_10->setText(niveau);                                                                                        // affiche le nom
+        QString cinAr=ui->lineEditarduino->text();                                                                            //ta9ra lid elli ktebtou ena
         QSqlQuery qry;
         qry.prepare("SELECT * FROM VOITURES WHERE CIN = :cinAr ");
         qry.bindValue(":cinAr",cinAr);
@@ -454,7 +454,7 @@ void MainWindow::on_pushButton_2_clicked()
             QString nom= qry.value("NOMVOITURE").toString();
              QString cin= qry.value("CIN").toString();
                 ui->label_11->setText(nom);
-             QByteArray cinBytes = cin.toLocal8Bit();
+             QByteArray cinBytes = cin.toLocal8Bit();                                                                       //tbaddel el cin bch tab3thou lel arduino
             A.write_to_arduino(cinBytes);
 
 
