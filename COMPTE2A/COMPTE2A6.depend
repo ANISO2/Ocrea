@@ -1,0 +1,32 @@
+# depslib dependency file v1.0
+1680602155 source:d:\yosra\esprit\c++\compte2a6\main.cpp
+	<iostream>
+	"Compte.h"
+	"Banque.h"
+
+1680602167 source:d:\yosra\esprit\c++\compte2a6\src\compte.cpp
+	"Compte.h"
+
+1680602194 d:\yosra\esprit\c++\compte2a6\include\compte.h
+	<string>
+	<iostream>
+
+1680602108 d:\yosra\esprit\c++\compte2a6\include\banque.h
+	<string>
+	"Compte.h"
+
+1680602125 source:d:\yosra\esprit\c++\compte2a6\src\banque.cpp
+	"Banque.h"
+
+1678200242 source:d:\yosra\esprit\c++\compte2a6\src\comptecourant.cpp
+	"CompteCourant.h"
+
+1678200280 d:\yosra\esprit\c++\compte2a6\include\comptecourant.h
+	<Compte.h>
+
+1678200196 source:d:\yosra\esprit\c++\compte2a6\src\compteepargne.cpp
+	"CompteEpargne.h"
+
+1678200156 d:\yosra\esprit\c++\compte2a6\include\compteepargne.h
+	<Compte.h>
+

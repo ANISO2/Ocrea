@@ -356,11 +356,24 @@ QPieSeries *series = new QPieSeries();
 series->append("bon etat", nbStock);
 series->append("necessite une maintennance", nbRupture);
 
+// Ajuster la taille des sections de cercle
+series->setPieSize(0.8);
+
+// Ajuster les couleurs des sections de cercle et afficher les pourcentages à côté
+QPieSlice *slice1 = series->slices().at(0);
+slice1->setBrush(QColor("#27da45"));
+slice1->setLabel(QString("%1%").arg(pourcentagebonetat, 0, 'f', 2));
+slice1->setLabelPosition(QPieSlice::LabelOutside);
+
+QPieSlice *slice2 = series->slices().at(1);
+slice2->setBrush(QColor("#006d31"));
+slice2->setLabel(QString("%1%").arg(pourcentagemaintenance, 0, 'f', 2));
+slice2->setLabelPosition(QPieSlice::LabelOutside);
+
 // Créer le graphique
 QChart *chart = new QChart();
 chart->addSeries(series);
 chart->setTitle("Pourcentage Par ETAT DE EQUIPEMENT : " + QString::number(pourcentagebonetat, 'f', 2) + "% equipements en bon etat, " + QString::number(pourcentagemaintenance, 'f', 2) + "% equipements necessitent une maintenance. Total: " + QString::number(total) + " equipements.");
-
 
 // Créer la vue du graphique et la placer dans le widget QLabel
 QChartView *chartView = new QChartView(chart, ui->label_stat);
@@ -368,11 +381,7 @@ chartView->setRenderHint(QPainter::Antialiasing);
 chartView->resize(ui->label_stat->size());
 chartView->show();
 
-QPieSlice *slice1 = series->slices().at(0);
-slice1->setBrush(QColor("#27da45"));
 
-QPieSlice *slice2 = series->slices().at(1);
-slice2->setBrush(QColor("#006d31"));
 }
 
 void equipement_window::on_pushButton_image_clicked()
@@ -441,23 +450,4 @@ void equipement_window::on_pushButton_codeQR_clicked()
     }
 }
 
-//***************arduino ***************************
 
-void equipement_window::on_pushButton_arduino_clicked()
-{
-    QString valeur = ui->lineEdit_arduinoEqui->text();
-    if (valeur != "0")
-    {
-        if (A.chercher_id(valeur) == 1 )
-        {
-            A.write_to_arduino("1");
-        }
-        else if (A.chercher_id(valeur) == 0)
-        {
-            A.write_to_arduino("0");
-            QMessageBox::critical(this, "ID non disponible",
-                                  "L'ID " + valeur + " n'est pas disponible. Veuillez entrer un ID valide.");
-        }
-    }
-    (valeur = "0");
-}

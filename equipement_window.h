@@ -47,6 +47,5 @@ private:
     void on_pushButton_Stat_clicked();
     void on_pushButton_image_clicked();
     void on_pushButton_codeQR_clicked();
-    void on_pushButton_arduino_clicked();
 };
 #endif // EQUIPEMENT_WINDOW_H

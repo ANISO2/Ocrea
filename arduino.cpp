@@ -92,19 +92,3 @@ int Arduino::write_to_arduino( QByteArray d)
 }
 
 
-int Arduino::chercher_id(QString id)
-{
-    QSqlDatabase bd=QSqlDatabase::database();
-    QSqlQuery query;
-
-    query.prepare("SELECT IDEMPLOYE FROM EMPLOYE WHERE IDEMPLOYE=:id");
-    query.bindValue(":id",id);
-    query.exec();
-    if(query.next())
-    {
-        return 1;
-    }
-    else
-        return 0;
-
-}
